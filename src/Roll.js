@@ -3,6 +3,6 @@ var Roll = function() {
 };
 
 Roll.prototype.getRandomRoll = function() {
-  this.randomRoll = Math.floor((Math.random() * 10) + 1);
+  this.randomRoll = Math.floor((Math.random() * 11);
 };
 

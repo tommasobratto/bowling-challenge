@@ -10,7 +10,7 @@ BowlingScoreboard.prototype.getRollScore = function(roll) {
 
 BowlingScoreboard.prototype.sumRolls = function() {
   this.totalScore = this.rollScore.reduce( function(result, element) {
-    return result + element
-});
-
+    return result + element 
+  });
+  this.rollScore.length = 0
 };

@@ -23,7 +23,7 @@ describe('BowlingScoreboard', function() {
 
     it('should add up the roll scores', function() {
 
-      bowlingScoreboard.rollScore.length = 0;
+      resetRollScore(bowlingScoreboard);
       mockRoll.getRandomRoll(2)
       bowlingScoreboard.getRollScore(mockRoll);
       mockRoll.getRandomRoll(4)
