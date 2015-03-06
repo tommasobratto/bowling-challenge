@@ -17,7 +17,19 @@ describe('BowlingScoreboard', function() {
 
       mockRoll.getRandomRoll(1);
       bowlingScoreboard.getRollScore(mockRoll);
-      expect(bowlingScoreboard.rollScore).toEqual(1);
+      expect(bowlingScoreboard.rollScore).toEqual([1]);
+
+    });
+
+    it('should add up the roll scores', function() {
+
+      bowlingScoreboard.rollScore.length = 0;
+      mockRoll.getRandomRoll(2)
+      bowlingScoreboard.getRollScore(mockRoll);
+      mockRoll.getRandomRoll(4)
+      bowlingScoreboard.getRollScore(mockRoll);
+      bowlingScoreboard.sumRolls();
+      expect(bowlingScoreboard.totalScore).toEqual(6);
 
     });
 
