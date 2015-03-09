@@ -1,7 +1,7 @@
 var BowlingScoreboard = function() {
   this.roundScoreArray = [];
   this.totalScore = [];
-  this.roundScore = [];
+  this.roundScore;
 };
 
 BowlingScoreboard.prototype.getRollScore = function(roll) {
