@@ -1,7 +1,8 @@
 function resetMatchScore(bowlingScoreboard) {
 
-  bowlingScoreboard.roundScoreArray.length = 0;
+  bowlingScoreboard.resetRoundScore();
   bowlingScoreboard.totalScoreArray.length = 0;
+  bowlingScoreboard.totalScore = 0;
 
 };
 

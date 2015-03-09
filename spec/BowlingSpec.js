@@ -17,7 +17,7 @@ describe('BowlingScoreboard', function() {
 
       mockRoll.getRandomRoll(1);
       bowlingScoreboard.getRollScore(mockRoll);
-      expect(bowlingScoreboard.roundScoreArray[0]).toEqual(1);
+      expect(bowlingScoreboard.roundScore).toEqual(1);
 
     });
 

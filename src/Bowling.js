@@ -22,6 +22,11 @@ BowlingScoreboard.prototype.sumRolls = function() {
 };
 
 BowlingScoreboard.prototype.getSpare = function() {
-  if(this.roundScore === 10) 
+  if(this.roundScore === 10)  
     return true;
+};
+
+BowlingScoreboard.prototype.resetRoundScore = function() {
+  this.roundScore = 0;
+  this.roundScoreArray.length = 0;
 };
