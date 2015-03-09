@@ -23,25 +23,21 @@ describe('BowlingScoreboard', function() {
 
     it('should add up the roll scores', function() {
 
-      resetRoundScore(bowlingScoreboard);
-      mockRoll.getRandomRoll(2);
-      bowlingScoreboard.getRollScore(mockRoll);
-      mockRoll.getRandomRoll(4);
-      bowlingScoreboard.getRollScore(mockRoll);
+      resetMatchScore(bowlingScoreboard);
+      rollBall(bowlingScoreboard, mockRoll, 2);
+      rollBall(bowlingScoreboard, mockRoll, 4);
       bowlingScoreboard.sumRolls();
-      expect(bowlingScoreboard.totalScore[0]).toEqual(6);
+      expect(bowlingScoreboard.totalScore).toEqual(6);
 
     });
 
     it('should know when the roll score is a spare', function() {
 
-      resetRoundScore(bowlingScoreboard);
-      mockRoll.getRandomRoll(8);
-      bowlingScoreboard.getRollScore(mockRoll);
-      mockRoll.getRandomRoll(2);
-      bowlingScoreboard.getRollScore(mockRoll);
+      resetMatchScore(bowlingScoreboard);
+      rollBall(bowlingScoreboard, mockRoll, 8);
+      rollBall(bowlingScoreboard, mockRoll, 2);
       bowlingScoreboard.sumRolls();
-      expect(bowlingScoreboard.totalScore[1]).toEqual(10);
+      expect(bowlingScoreboard.totalScore).toEqual(10);
       expect(bowlingScoreboard.getSpare()).toEqual(true);
 
     });

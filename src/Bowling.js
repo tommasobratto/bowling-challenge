@@ -1,20 +1,24 @@
 var BowlingScoreboard = function() {
   this.roundScoreArray = [];
-  this.totalScore = [];
+  this.totalScoreArray = [];
   this.roundScore;
+  this.totalScore
 };
 
 BowlingScoreboard.prototype.getRollScore = function(roll) {
   if(this.roundScoreArray.length != 3)
     this.roundScoreArray.push(roll.randomRoll);
-    this.roundScore = this.roundScoreArray.reduce( function(result, element) {
+  this.roundScore = this.roundScoreArray.reduce( function(result, element) {
     return result + element 
   });
 };
 
 BowlingScoreboard.prototype.sumRolls = function() {
-  if(this.totalScore.length != 10)
-  this.totalScore.push(this.roundScore);
+  if(this.totalScoreArray.length != 10)
+    this.totalScoreArray.push(this.roundScore);
+  this.totalScore = this.totalScoreArray.reduce( function(result, element) {
+    return result + element
+  });
 };
 
 BowlingScoreboard.prototype.getSpare = function() {
