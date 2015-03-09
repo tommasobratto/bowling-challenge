@@ -13,6 +13,7 @@ BowlingScoreboard.prototype.getRollScore = function(roll) {
 };
 
 BowlingScoreboard.prototype.sumRolls = function() {
+  if(this.totalScore.length != 10)
   this.totalScore.push(this.roundScore);
 };
 
