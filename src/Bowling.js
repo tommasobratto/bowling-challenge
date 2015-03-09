@@ -3,6 +3,7 @@ var BowlingScoreboard = function() {
   this.totalScoreArray = [];
   this.roundScore;
   this.totalScore
+  this.spare;
 };
 
 BowlingScoreboard.prototype.getRollScore = function(roll) {
@@ -21,9 +22,9 @@ BowlingScoreboard.prototype.sumRolls = function() {
   });
 };
 
-BowlingScoreboard.prototype.getSpare = function() {
+BowlingScoreboard.prototype.getSpare = function(roll) {
   if(this.roundScore === 10)  
-    return true;
+    this.spare = true;
 };
 
 BowlingScoreboard.prototype.resetRoundScore = function() {

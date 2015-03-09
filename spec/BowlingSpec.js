@@ -38,8 +38,8 @@ describe('BowlingScoreboard', function() {
       rollBall(bowlingScoreboard, mockRoll, 2);
       bowlingScoreboard.sumRolls();
       expect(bowlingScoreboard.totalScore).toEqual(10);
-      expect(bowlingScoreboard.getSpare()).toEqual(true);
-
+      bowlingScoreboard.getSpare();
+      expect(bowlingScoreboard.spare).toBe(true);
     });
 
   }); 
