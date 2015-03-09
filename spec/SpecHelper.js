@@ -1,5 +1,5 @@
-function resetRollScore(bowlingScoreboard) {
+function resetRoundScore(bowlingScoreboard) {
 
-  bowlingScoreboard.rollScore.length = 0;
+  bowlingScoreboard.roundScoreArray.length = 0;
 
 };

@@ -1,16 +1,22 @@
 var BowlingScoreboard = function() {
-this.rollScore = [];
-this.totalScore;
+  this.roundScoreArray = [];
+  this.totalScore = [];
+  this.roundScore = [];
 };
 
 BowlingScoreboard.prototype.getRollScore = function(roll) {
-  if(this.rollScore.length != 3)
-  this.rollScore.push(roll.randomRoll);
+  if(this.roundScore.length != 3)
+    this.roundScoreArray.push(roll.randomRoll);
+    this.roundScore = this.roundScoreArray.reduce( function(result, element) {
+    return result + element 
+  });
 };
 
 BowlingScoreboard.prototype.sumRolls = function() {
-  this.totalScore = this.rollScore.reduce( function(result, element) {
-    return result + element 
-  });
-  this.rollScore.length = 0
+  this.totalScore.push(this.roundScore);
+};
+
+BowlingScoreboard.prototype.getSpare = function() {
+  if(this.roundScore === 10) 
+    return true;
 };
