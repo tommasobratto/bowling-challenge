@@ -23,4 +23,15 @@ describe('TotalScore', function() {
 
   });
 
+  it('should be able to know if the frame score is a spare', function() {
+
+    singleRoll.getScore(9);
+    totalScore.addScore(singleRoll);
+    singleRoll.getScore(1);
+    totalScore.addScore(singleRoll);
+    totalScore.sumFrameScore();
+    expect(totalScore.spare).toBe(true);
+
+  });
+  
 });
