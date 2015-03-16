@@ -1,5 +1,4 @@
-var TotalScore = function() {
-  this.value;
+var ScoreBoard = function() {
   this.rollScores = [[,],[,],[,],[,],[,],[,],[,],[,],[,],[,,]];
   this.frame = 0;
   this.roll = 0;
@@ -10,7 +9,7 @@ var TotalScore = function() {
   this.lastRoll;
 };
 
-TotalScore.prototype.addScore = function(roll) {
+ScoreBoard.prototype.addScore = function(roll) {
   if(roll.score === 10) {
     this.strike = true;
     this.rollScores[this.frame][this.roll] = roll.score;
@@ -22,7 +21,7 @@ TotalScore.prototype.addScore = function(roll) {
   this.setRoll();
 };
 
-TotalScore.prototype.sumFrameScore = function() {
+ScoreBoard.prototype.sumFrameScore = function() {
   this.frameScore = this.rollScores[this.frame].reduce( function(firstRoll, secondRoll) {
     return firstRoll + secondRoll
   });
@@ -35,11 +34,11 @@ TotalScore.prototype.sumFrameScore = function() {
   this.setFrame();
 };
 
-TotalScore.prototype.setFrame = function() {
+ScoreBoard.prototype.setFrame = function() {
   this.frame += 1;
 };
 
-TotalScore.prototype.setRoll = function() {
+ScoreBoard.prototype.setRoll = function() {
   if(this.roll === 1) {
     this.roll = 0;
   } else {
