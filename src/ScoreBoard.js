@@ -17,6 +17,7 @@ ScoreBoard.prototype.addScore = function(roll) {
     this.strike = false;
     this.rollScores[this.frame][this.roll] = roll.score;
   };
+
   this.lastRoll = this.rollScores[this.frame][this.roll]
   this.setRoll();
 };
@@ -25,11 +26,13 @@ ScoreBoard.prototype.sumFrameScore = function() {
   this.frameScore = this.rollScores[this.frame].reduce( function(firstRoll, secondRoll) {
     return firstRoll + secondRoll
   });
+
   if(this.frameScore === 10) {
     this.spare = true;
   } else {
     this.spare = false;
-  }
+  };
+
   this.lastFrame = this.frameScore
   this.setFrame();
 };
@@ -46,3 +49,6 @@ ScoreBoard.prototype.setRoll = function() {
   };
 };
 
+ScoreBoard.prototype.addBonusScore = function() {
+  this.frameScore = this.lastFrame + this.lastRoll
+};

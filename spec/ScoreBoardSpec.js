@@ -61,4 +61,23 @@ describe('ScoreBoard', function() {
 
   });
 
+  it('should be able to add a bonus score when the roll is a spare', function() {
+
+    singleRoll.getScore(9);
+    scoreBoard.addScore(singleRoll);
+    singleRoll.getScore(1);
+    scoreBoard.addScore(singleRoll);
+    scoreBoard.sumFrameScore();
+    singleRoll.getScore(2);
+    scoreBoard.addScore(singleRoll);
+    scoreBoard.addBonusScore();
+    expect(scoreBoard.lastRoll).toEqual(2)
+    expect(scoreBoard.frameScore).toEqual(12);
+    singleRoll.getScore(3);
+    scoreBoard.addScore(singleRoll);
+    scoreBoard.sumFrameScore();
+    expect(scoreBoard.frameScore).toEqual(5);
+
+  });
+
 });
