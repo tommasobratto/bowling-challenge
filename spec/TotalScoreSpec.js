@@ -41,4 +41,13 @@ describe('TotalScore', function() {
     expect(totalScore.strike).toBe(true);
 
   });
+
+  it('should know the last roll score', function() {
+
+    singleRoll.getScore(1);
+    totalScore.addScore(singleRoll);
+    expect(totalScore.lastRoll).toEqual(1);
+
+  });
+
 });

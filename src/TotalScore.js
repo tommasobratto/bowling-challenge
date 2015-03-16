@@ -6,6 +6,8 @@ var TotalScore = function() {
   this.frameScore;
   this.strike;
   this.spare;
+  this.lastFrame;
+  this.lastRoll;
 };
 
 TotalScore.prototype.addScore = function(roll) {
@@ -16,10 +18,12 @@ TotalScore.prototype.addScore = function(roll) {
     this.strike = false;
     this.rollScores[this.frame][this.roll] = roll.score;
   };
+  this.lastRoll = this.rollScores[this.frame][this.roll]
   this.setRoll();
 };
 
 TotalScore.prototype.sumFrameScore = function() {
+  this.lastFrame = this.frame
   this.frameScore = this.rollScores[this.frame].reduce( function(firstRoll, secondRoll) {
     return firstRoll + secondRoll
   });
