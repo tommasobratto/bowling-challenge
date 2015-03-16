@@ -33,5 +33,12 @@ describe('TotalScore', function() {
     expect(totalScore.spare).toBe(true);
 
   });
-  
+
+  it('should be able to know if the roll score is a strike', function() {
+
+    singleRoll.getScore(10);
+    totalScore.addScore(singleRoll);
+    expect(totalScore.strike).toBe(true);
+
+  });
 });
