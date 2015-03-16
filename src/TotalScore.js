@@ -23,7 +23,6 @@ TotalScore.prototype.addScore = function(roll) {
 };
 
 TotalScore.prototype.sumFrameScore = function() {
-  this.lastFrame = this.frame
   this.frameScore = this.rollScores[this.frame].reduce( function(firstRoll, secondRoll) {
     return firstRoll + secondRoll
   });
@@ -32,6 +31,7 @@ TotalScore.prototype.sumFrameScore = function() {
   } else {
     this.spare = false;
   }
+  this.lastFrame = this.frameScore
   this.setFrame();
 };
 
@@ -46,3 +46,4 @@ TotalScore.prototype.setRoll = function() {
     this.roll = 1;
   };
 };
+

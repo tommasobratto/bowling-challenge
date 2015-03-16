@@ -50,4 +50,15 @@ describe('TotalScore', function() {
 
   });
 
+  it('should know the last frame score', function() {
+
+    singleRoll.getScore(1);
+    totalScore.addScore(singleRoll);
+    singleRoll.getScore(1);
+    totalScore.addScore(singleRoll);
+    totalScore.sumFrameScore();
+    expect(totalScore.lastFrame).toEqual(2);
+
+  });
+
 });
